@@ -1,0 +1,64 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <!-- Username -->
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Username</nz-form-label>
+    <nz-form-control
+      [nzSpan]="12"
+      nzHasFeedback
+      [nzErrorTip]="'Please input your username!'"
+    >
+      <input
+        nz-input
+        formControlName="userName"
+        placeholder="Enter your username"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <!-- Age -->
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Age</nz-form-label>
+    <nz-form-control
+      [nzSpan]="12"
+      nzHasFeedback
+      [nzErrorTip]="'Age must be at least 18!'"
+    >
+      <input
+        nz-input
+        type="number"
+        formControlName="age"
+        placeholder="Enter your age"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <!-- Address -->
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Address</nz-form-label>
+    <nz-form-control
+      [nzSpan]="12"
+      nzHasFeedback
+      [nzErrorTip]="'Please input your address!'"
+    >
+      <input
+        nz-input
+        formControlName="address"
+        placeholder="Enter your address"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <!-- Buttons -->
+  <nz-form-item>
+    <nz-form-control [nzOffset]="7" [nzSpan]="12">
+      <button
+        nz-button
+        nzType="primary"
+        [disabled]="!validateForm.valid"
+      >
+        Submit
+      </button>
+      <button nz-button (click)="resetForm($event)">Reset</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
